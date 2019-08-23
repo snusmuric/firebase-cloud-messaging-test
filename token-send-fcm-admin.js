@@ -9,8 +9,6 @@ function sendToDevice(deviceToken) {
     notification: {
       // you have to duplicate title body under the 'notification' and 'data' nodes (because of specific of how Android's background push notification works)
       ...titleAndBody,
-      title: 'Hi there!!',
-      body: 'Have you been on Mars for the past two weeks or something?',
     },
 
     data: {
