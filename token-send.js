@@ -1,6 +1,8 @@
 const FCM = require('fcm-node');
 
-const serverKey = 'firebase server key from the console';
+// specify your Firebase cloud messaging Server Key. You can copy it from here:
+// https://console.firebase.google.com/project/your_project_name/settings/cloudmessaging
+const serverKey = 'your server key from Firebase console';
 const fcm = new FCM(serverKey);
 
 // devices tokens
@@ -44,5 +46,3 @@ function sendToDevice(deviceToken) {
 deviceTokens.forEach(token => {
   sendToDevice(token)
 })
-
-// TODO figure out how to send to the specific topic
