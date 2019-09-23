@@ -9,6 +9,7 @@ function sendToDevice(deviceToken) {
     notification: {
       // you have to duplicate title body under the 'notification' and 'data' nodes (because of specific of how Android's background push notification works)
       ...titleAndBody,
+      sound: 'default',
     },
 
     data: {
@@ -64,7 +65,7 @@ const deviceTokens = [
   //'toke321'
 ]
 
-let messagingSrv = fcmAdmin.messaging()
+const messagingSrv = fcmAdmin.messaging()
 sendAll().finally(() => {
   process.exit() // FCM Admin does not let node thread to terminate for some reason
 })
